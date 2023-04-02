@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import {FiShoppingCart} from "react-icons/Fi";
+import {FiShoppingCart} from "react-icons/fi";
 import { Cart } from ".";
 import { useStateContext } from "../../context/stateContext";
 
