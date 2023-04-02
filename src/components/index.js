@@ -10,3 +10,4 @@ export {default as ImageProfile} from "./ImageProfile";
 export {default as Quantity} from "./Quantity";
 export {default as AddProduct} from "./AddProduct";
 export {default as SuccessComponent} from "./Success";
+export {default as Toaster} from "../../context/stateContext";

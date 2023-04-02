@@ -1,8 +1,8 @@
 import React, {useRef} from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping} from "react-icons/Ai";
-import {TiDeleteOutline} from "react-icons/Ti";
+import {AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping} from "react-icons/ai";
+import {TiDeleteOutline} from "react-icons/ti";
 import { toast } from "react-hot-toast";
 import { urlFor } from "../../lib/client";
 import getStripe from "../../lib/getStripe";

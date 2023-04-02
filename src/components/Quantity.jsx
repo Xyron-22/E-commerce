@@ -1,6 +1,6 @@
 import React from "react";
 import { useStateContext } from "../../context/stateContext";
-import {AiOutlineMinusCircle, AiOutlinePlusCircle} from "react-icons/Ai";
+import {AiOutlineMinusCircle, AiOutlinePlusCircle} from "react-icons/ai";
 
 const Quantity = () => {
 

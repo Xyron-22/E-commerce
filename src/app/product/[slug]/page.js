@@ -1,6 +1,6 @@
-import {AiFillStar} from "react-icons/Ai";
-import { Product, ImageProfile, Quantity, AddProduct } from "@/components";
-import { Toaster } from "react-hot-toast";
+import {AiFillStar} from "react-icons/ai";
+import { Product, ImageProfile, Quantity, AddProduct, Toaster } from "@/components";
+// import { Toaster } from "react-hot-toast";
 import "../../animation.css";
 
 
