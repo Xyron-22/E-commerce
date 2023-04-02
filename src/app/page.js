@@ -1,91 +1,43 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import { Inter } from 'next/font/google';
+import {HeroBanner, Product, FooterBanner} from "@/components";
+import "./animation.css";
 
-const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+async function getData () {
+  const products = await fetch(process.env.NEXT_PUBLIC_SANITY_PRODUCTS, {cache: "no-store"})
+  .then((response) => response.json());
+ 
+  const bannerData = await fetch(process.env.NEXT_PUBLIC_SANITY_BANNERDATA, {cache: "no-store"})
+  .then((response) => response.json());
+  
+  return {
+    products,
+    bannerData,
+  }
+}
+
+
+export default async function Home() {
+  
+  const {products, bannerData} = await getData();
+  const productsArr = products.result;
+  const bannerDataArr = bannerData.result;
+  
+ 
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+    <main className='max-w-[1400px] m-auto w-full'>
+        <HeroBanner heroBanner={bannerDataArr?.length && bannerDataArr[0]}></HeroBanner>
+        <div className='w-full text-center my-5' id="products">
+          <h2 className='text-6xl font-bold font-anton text-fc'>Best Selling Products</h2>
+          <p className='text-2xl leading-loose'>Clothes of many variations</p>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
+        <div className='flex justify-center flex-wrap lg:w-full'>
+          {productsArr.map((product) => <Product key={product._id} product={product}></Product>)}
         </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <FooterBanner footerBanner={bannerDataArr && bannerDataArr[0]}></FooterBanner>
     </main>
+    </>
   )
 }
+

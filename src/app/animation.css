@@ -1,0 +1,15 @@
+.track {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 15s linear infinite;
+    width: 180%;
+  }
+  .track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(150%); }
+    to { transform: translateX(-180%); }
+  }
