@@ -1,38 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+___E-Commerce Website___
 
-## Getting Started
+Mar 2023 - Apr 2023
 
-First, run the development server:
+A responsive E-commerce site that has a payment function and keeps track of your cart items.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+___FEATURES:___
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-Fully responsive
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+-Fully functional and interactive
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+-Browse products
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+-Adding and removing items to cart
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+-Increase and decrease number of items in the cart
 
-## Learn More
+-Total bill to pay
 
-To learn more about Next.js, take a look at the following resources:
+-Opening product page (redirected to an individual product page)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-You may also like (other products offered)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+-Payment function (using stripe)
 
-## Deploy on Vercel
+-Check out page
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-Success page (if checkout done)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-Keep track of your items in the cart (even closing the browser and coming back)
+
+___TECH STACK USED:___
+
+-HTML
+
+-CSS
+
+-JavaScript
+
+-React Js
+
+-Next Js
+
+-Tailwind CSS
+
+-Node Js
+
+-Sanity.io
+
+-GIT
+
+-NPM
